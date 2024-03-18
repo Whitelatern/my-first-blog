@@ -112,3 +112,36 @@ h1, h2, h3, h4 {
         font-size: 24px;
     }
 }
+
+
+
+
+
+.page-footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-links li:last-child {
+    margin-right: 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
