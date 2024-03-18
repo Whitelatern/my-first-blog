@@ -1,4 +1,81 @@
+/* Resetting default margin and padding */
+body, h1, h2, h3, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Page header */
 .page-header {
+    background-color: #C25100;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1,
+.page-header h1 a {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+/* Font */
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+/* Date */
+.date {
+    color: #828282;
+}
+
+/* Save button */
+.save {
+    float: right;
+}
+
+/* Form elements */
+.post-form textarea,
+.post-form input {
+    width: 100%;
+}
+
+/* Top menu */
+.top-menu {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+/* Post */
+.post {
+    margin-bottom: 70px;
+}
+
+.post h2 a {
+    color: #000000;
+}
+
+/* Post date and actions */
+.post > .date,
+.post > .actions {
+    float: right;
+}
+
+/* Secondary button */
+.btn-secondary {
+    color: #C25100;
+    background: none;
+    border-color: #C25100;
+}
+
+.btn-secondary:hover {
+    color: #FFFFFF;
+    background-color: #C25100;
+}
+
+/* .page-header {
     background-color: #C25100;
     margin-top: 0;
     margin-bottom: 40px;
@@ -68,3 +145,4 @@ h4 {
     color: #FFFFFF;
     background-color: #C25100;
 }
+ */
