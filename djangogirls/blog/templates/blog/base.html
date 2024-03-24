@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-    <header class="page-header">
-        <div class="container">
-            <a href="{% url 'post_new' %}" class="top-menu">
+    <header style="background-color: #0b4675; padding: 20px;">
+        <div class="container" style="display: flex; align-items: center;">
+            <a href="{% url 'post_new' %}" class="top-menu" style="text-decoration: none; color: #ffffff; font-size: 24px; margin-right: 20px;">
                 {% include './icons/icons8-plus.svg' %}
             </a>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1 style="margin: 0;">
+                <a href="/" style="text-decoration: none; color: #ffffff; font-size: 36px; font-family: 'Arial', sans-serif;">Django Girls Blog</a>
+            </h1>
         </div>
     </header>
+    
     <main class="content container">
         <div class="row">
             <div class="col">
