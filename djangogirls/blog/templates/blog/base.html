@@ -20,14 +20,19 @@
         </div>
     </header>
     
-    <main class="content container">
-        <div class="row">
-            <div class="col">
-                {% block content %}
-                {% endblock %}
+    <main style="margin-top: 20px; padding: 20px;">
+        <div style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+    
     <footer style="background-color: #0b4675; color: #ffffff; padding: 20px; text-align: center;">
         <div class="container">
             <div class="row">
