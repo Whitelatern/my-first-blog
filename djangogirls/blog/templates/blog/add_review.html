@@ -1,0 +1,58 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <style>
+        /* CSS Styles for New Review Form */
+
+        .post-form {
+            margin-top: 20px;
+            max-width: 500px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-form h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .post-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .post-form input[type="text"],
+        .post-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .post-form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .post-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <h1>New Review</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
+
