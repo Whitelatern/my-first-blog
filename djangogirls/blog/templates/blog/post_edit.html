@@ -2,19 +2,31 @@
 
 {% block content %}
 <style>
+    /* Moved CSS styles into a separate style block */
     h2 {
         font-size: 24px;
         margin-bottom: 20px;
     }
 
+    .post-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
     .post-form {
         max-width: 500px;
         margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
     }
 
     .post-form input[type="text"],
     .post-form textarea {
-        width: 100%;
+        width: calc(100% - 22px); /* Adjusting for padding and border */
         padding: 10px;
         margin-bottom: 10px;
         border: 1px solid #ccc;
@@ -23,6 +35,7 @@
     }
 
     .post-form button {
+        width: 100%;
         padding: 10px 20px;
         background-color: #007bff;
         color: #fff;
@@ -30,6 +43,7 @@
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
+        transition: background-color 0.3s;
     }
 
     .post-form button:hover {
@@ -37,9 +51,14 @@
     }
 </style>
 
-<h2>New post</h2>
-<form method="POST" class="post-form">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-secondary">Save</button>
-</form>
+<div class="post-form-container">
+    <div class="post-form">
+        <h2>New post</h2>
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-secondary">Save</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

@@ -2,48 +2,56 @@
 
 {% block content %}
     <style>
-        /* Add your CSS styles here */
+        /* CSS styles for the post, comments, and reviews */
         .post {
             margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-
+        
         .actions {
             margin-bottom: 10px;
         }
-
+        
         .date {
             font-style: italic;
             color: #888;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
-
-        .comment {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
+        
+        .comment, .review {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            background-color: #f9f9f9;
         }
-
-        .comment .date {
+        
+        .comment .date, .review .date {
             font-size: 12px;
             color: #888;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
-
-        .review {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-
-        .review .date {
-            font-size: 12px;
-            color: #888;
-            margin-bottom: 5px;
-        }
-
+        
         .btn-default {
-            margin-right: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
         }
+        
+        .btn-default:hover {
+            background-color: #0056b3;
+        }
+        
     </style>
 
     <article class="post">
@@ -68,6 +76,7 @@
     <hr>
     <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
     <a class="btn btn-default" href="{% url 'add_review' pk=post.pk %}">Add review</a>
+    <br>
     {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
     <div class="comment">
@@ -87,6 +96,7 @@
     </div>
     {% endif %}
     {% empty %}
+    <br>
     <p>No comments here yet :(</p>
     {% endfor %}
     <h3>Reviews ({{ review_count }})</h3>

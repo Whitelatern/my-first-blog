@@ -6,48 +6,57 @@
         max-width: 400px;
         margin: 0 auto;
         padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
+        border-radius: 10px;
+        background-color: #f8f9fa;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
-
+    
     table {
         width: 100%;
     }
-
+    
     table td {
-        padding: 5px;
+        padding: 10px;
     }
-
+    
     input[type="text"],
     input[type="password"] {
-        width: calc(100% - 10px);
-        padding: 5px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f3f4f6;
+        transition: background-color 0.3s, border-color 0.3s;
     }
-
+    
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+    }
+    
     input[type="submit"] {
         width: 100%;
-        padding: 10px;
+        padding: 15px;
         background-color: #007bff;
         color: #fff;
         border: none;
-        border-radius: 3px;
+        border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s;
     }
-
+    
     input[type="submit"]:hover {
         background-color: #0056b3;
     }
-
+    
     .error-message {
         color: red;
         font-size: 14px;
         margin-top: 10px;
     }
+    
 </style>
 
 {% if form.errors %}
